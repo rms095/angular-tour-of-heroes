@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from "../../model/Hero";
 import {HeroService} from "../../service/hero.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-heroes',
@@ -21,9 +22,5 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
-
-  onSelectHero(hero): void {
-    this.selectedHero = hero;
   }
 }
